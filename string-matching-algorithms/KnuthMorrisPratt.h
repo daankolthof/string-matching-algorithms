@@ -17,7 +17,7 @@ public:
 		size_t i = 0;
 		int j = 0;
 
-		std::vector<int> table;
+		std::vector<int> table(pattern.length()+1);
 		build_table(pattern, table);
 
 		while (i < string.length())
@@ -53,8 +53,6 @@ private:
 	*/
 	static void build_table(const std::string& pattern, std::vector<int>& table)
 	{
-		table.resize(pattern.length() + 1);
-
 		size_t pos = 1;
 		int cnd = 0;
 
