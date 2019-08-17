@@ -39,11 +39,11 @@ public:
 						// Strings to do not match, set the flag to false so the searching will continue.
 						actual_match = false;
 					}
+				}
 
-					if (actual_match)
-					{
-						return i;
-					}
+				if (actual_match)
+				{
+					return i;
 				}
 			}
 
