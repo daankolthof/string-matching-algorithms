@@ -3,8 +3,6 @@
 
 #include <string>
 
-#include <iostream>
-
 class NaiveMatching
 {
 public:

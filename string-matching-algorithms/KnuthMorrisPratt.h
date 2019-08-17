@@ -14,7 +14,7 @@ public:
 	*/
 	static int findString(const std::string& string, const std::string& pattern)
 	{
-		int i = 0;
+		size_t i = 0;
 		int j = 0;
 
 		std::vector<int> table;
@@ -55,7 +55,7 @@ private:
 	{
 		table.resize(pattern.length() + 1);
 
-		int pos = 1;
+		size_t pos = 1;
 		int cnd = 0;
 
 		table[0] = -1;
