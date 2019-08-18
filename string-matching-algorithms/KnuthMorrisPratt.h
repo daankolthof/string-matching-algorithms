@@ -17,8 +17,8 @@ public:
 		size_t i = 0;
 		int j = 0;
 
-		std::vector<int> table(pattern.length()+1);
-		build_table(pattern, table);
+		build_table(pattern);
+		const std::vector<int>& table = get_table();
 
 		while (i < string.length())
 		{
@@ -51,8 +51,15 @@ public:
 private:
 	/* Builds the table to use during string matching.
 	*/
-	static void build_table(const std::string& pattern, std::vector<int>& table)
+	static void build_table(const std::string& pattern)
 	{
+		std::vector<int>& table = get_table();
+
+		if (pattern.length() + 1 != table.size())
+		{
+			table.resize(pattern.length() + 1);
+		}
+
 		size_t pos = 1;
 		int cnd = 0;
 
@@ -82,6 +89,11 @@ private:
 		table[pos] = cnd;
 	}
 
+	static std::vector<int>& get_table()
+	{
+		static std::vector<int> table;
+		return table;
+	}
 
 };
 
