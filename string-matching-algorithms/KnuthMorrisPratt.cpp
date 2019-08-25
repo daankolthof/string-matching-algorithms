@@ -14,7 +14,7 @@ int KnuthMorrisPratt::findString(const std::string& string, const std::string& p
 			++i;
 			++j;
 
-			if (pattern.length() == j)
+			if (pattern.length() == static_cast<unsigned int>(j))
 			{
 				// Found pattern in input string, return index within the string.
 				return i - j;
